@@ -1,3 +1,20 @@
+.header{
+    height: 100px;
+}
+#compName{
+    font-family: 'Anton', sans-serif;
+    font-size: 36px;
+}
+.carousel-item > img {
+    height: 150px;
+    width: 150px;
+}
+#carouselDiv{
+    margin-top: 10em;
+}
+
+
+
 table {
     border-collapse: collapse;
     margin: 15px 0;

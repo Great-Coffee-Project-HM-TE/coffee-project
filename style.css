@@ -1,26 +1,48 @@
-.header{
-    height: 100px;
+body{
+    background-image: ;
 }
-#compName{
+.header {
+    background-color: lightgray;
+    width: 100%;
+    height: 50px;
+}
+
+#compName {
     font-family: 'Anton', sans-serif;
-    font-size: 36px;
+    font-size: 18px;
 }
-.carousel-item > img {
-    height: 150px;
+
+
+#coffees{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+h2 {
+    font-family: 'Abel',sans-serif;
+    font-size: 20px;
+}
+h3  {
+    font-family: 'Abel',serif;
+    font-size: 12px;
+}
+.coffee {
+    display: flex;
     width: 150px;
+    height: 200px;
+    border: solid #675041 3px;
+    background-image: url("Preview22 copy.jpg");
+    background-size: 150%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-position: center;
 }
-#carouselDiv{
-    margin-top: 10em;
+#selectButton{
+    height: 10px;
 }
-
-
-
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
-}
-
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+.button{
+    height: 1.5em;
+    font-size: 10px;
 }

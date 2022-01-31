@@ -16,68 +16,35 @@
 
 </head>
 <body>
-<div class="header">
-    <img src="pexels-lukas-1419931(1).jpg" alt="coffee background">
-</div>
-<div class="container-fluid">
-        <div class="row">
-            <div id="compName" class="col">Great Coffee Bistro</div>
-            <div id="facebook" class="nav-link">FaceBook</div>
-            <div id="twitter" class="nav-link">Twitter</div>
-            <div id="instagram" class="nav-link">Instagram</div>
-            <div id="" class="nav-link"></div>
+
+<div class="container-fluid p-0">
+    <div id="bgcolorbanner" class="header">
+        <div class="row d-flex pr-2">
+            <div id="compName" class="col-6 mr-auto">Great Coffee Bistro</div>
+            <div id="facebook" class="nav-link col-1 p-0"><i class="bi bi-facebook"></i></div>
+            <div id="twitter" class="nav-link col-1 p-0"><i class="bi bi-twitter"></i></div>
+            <div id="instagram" class="nav-link col-1 p-0"><i class="bi bi-instagram"></i></div>
         </div>
-    <div class="row">
-        <div class="col">Drop Down Coffee Selector</div>
-        <div class="col"> Roast</div>
-        <div class="col">Size</div>
-        <div class="col">Search Button</div>
     </div>
+
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <h1>Expresso!</h1>
+<!--<div class="row d-flex justify-content-around">-->
+<!--    <button class="button roastSelector col-3" id="lightButton">Light Roast</button>-->
+<!--    <button class="button roastSelector col-3" id="mediumButton">Medium Roast</button>-->
+<!--    <button class="button roastSelector col-3" id="darkButton">Dark Roast</button>-->
+<!--</div>-->
+<!--<h1>Coffee!</h1>-->
 
     <form>
         <label for="roast-selection"></label>
         <select id="roast-selection">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
+            <option>Light</option>
+            <option>Medium</option>
+            <option>Dark</option>
         </select>
         <input id="submit" type="submit" />
     </form>
-
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>ROAST</th>
-            </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
+<div id="coffees"></div>
 
     <script src="main.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

@@ -64,6 +64,11 @@ h3  {
     color: papayawhip;
     border: #0a0703 solid 2px;
 }
+#allButton {
+    background-color: black;
+    color: papayawhip;
+    border: #0a0703 solid 2px;
+}
 #searchBoxLabel{
     font-size: 14px;
     font-family: 'Abel',serif;

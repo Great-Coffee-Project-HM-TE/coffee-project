@@ -30,6 +30,7 @@ function updateCoffees(e) {
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+let newCoffeeId = 20;
 var coffees = [
     {id: 1, name: 'Light City', roast: 'Light'},
     {id: 2, name: 'Half City', roast: 'Light'},
@@ -58,10 +59,9 @@ var searchCoffees = function(event) {
     var searchedCoffees = [];
     var searchInput = document.getElementById("searchBox").value;
     coffees.forEach(function(coffee) {
-        if (coffee.name.includes(searchInput) || coffee.roast.includes(searchInput)) {
+        if (coffee.name.toUpperCase().includes(searchInput.toUpperCase()) || coffee.roast.toUpperCase().includes(searchInput.toUpperCase())) {
             searchedCoffees.push(coffee);
         }
-
     });
     tbody.innerHTML = renderCoffees(searchedCoffees);
 }
@@ -111,13 +111,25 @@ var displayAllRoast = function (event) {
 }
 document.getElementById('allButton').addEventListener('click', displayAllRoast);
 
+var addCustomersCoffee = function (event){
+    event.preventDefault()
+    let customerEnteredRoast = document.getElementById('customerRoast').value
+    let customerEnteredName = document.getElementById('addYourBrew').value
+    let customCoffee = {
+        id: newCoffeeId++,
+        name: customerEnteredName,
+        roast: customerEnteredRoast
+    };
+    coffees.push(customCoffee);
+    console.log(customerEnteredRoast)
+    tbody.innerHTML = renderCoffees(coffees)
 
+}
+document.getElementById('submitRoast').addEventListener('click', addCustomersCoffee);
 
-
-
-
-
-
+// let customerEnteredRoast = customerRoast.value
+// console.log(customerEnteredRoast)
+// document.getElementById('submitRoast').addEventListener('click', addCustomersCoffee);
 
 
 

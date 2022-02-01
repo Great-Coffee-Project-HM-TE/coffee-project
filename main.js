@@ -128,7 +128,7 @@ document.getElementById('darkButton').addEventListener('click', displayDRoast);
 // var displayDarkRoast = function (event) {
 //     document.getElementById("coffees").innerText = darkRoastedCoffees;
 // }
-// document.getElementById('darkButton').addEventListener('click', displayRoast);
+// document.getElementById('darkButton').addEventListener('click', displayRoast);//
 
 
 

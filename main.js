@@ -106,6 +106,10 @@ var displayDRoast = function (event) {
 }
 document.getElementById('darkButton').addEventListener('click', displayDRoast);
 
+var displayAllRoast = function (event) {
+    tbody.innerHTML = renderCoffees(coffees);
+}
+document.getElementById('allButton').addEventListener('click', displayAllRoast);
 
 
 

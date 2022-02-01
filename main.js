@@ -144,7 +144,7 @@ document.getElementById('submitRoast').addEventListener('click', addCustomersCof
 // var displayDarkRoast = function (event) {
 //     document.getElementById("coffees").innerText = darkRoastedCoffees;
 // }
-// document.getElementById('darkButton').addEventListener('click', displayRoast);
+// document.getElementById('darkButton').addEventListener('click', displayRoast);//
 
 
 

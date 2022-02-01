@@ -28,12 +28,12 @@
     </div>
 
 </div>
-<!--<div class="row d-flex justify-content-around">-->
-<!--    <button class="button roastSelector col-3" id="lightButton">Light Roast</button>-->
-<!--    <button class="button roastSelector col-3" id="mediumButton">Medium Roast</button>-->
-<!--    <button class="button roastSelector col-3" id="darkButton">Dark Roast</button>-->
-<!--</div>-->
-<!--<h1>Coffee!</h1>-->
+<div class="row d-flex justify-content-around">
+    <button class="button roastSelector col-3" id="lightButton">Light Roast</button>
+    <button class="button roastSelector col-3" id="mediumButton">Medium Roast</button>
+    <button class="button roastSelector col-3" id="darkButton">Dark Roast</button>
+</div>
+<h1>Coffee!</h1>
 
     <form>
         <label for="roast-selection"></label>
@@ -44,9 +44,13 @@
         </select>
         <input id="submit" type="submit" />
     </form>
-<div class="nav">
-    <input type="text" placeholder="search" id="searchBox">
-</div>
+<form autocomplete="off">
+    <div class="autocomplete">
+        <label for="searchBox">Search Box</label>
+        <input type="text" placeholder="search" id="searchBox">
+    </div>
+</form>
+
 <div id="coffees"></div>
 
     <script src="main.js"></script>

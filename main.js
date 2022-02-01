@@ -22,7 +22,7 @@ function updateCoffees(e) {
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast && searchInput.value === coffee.name) {
+        if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
     });
@@ -50,36 +50,113 @@ var coffees = [
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-// var lightButton = document.querySelector('#lightButton');
 tbody.innerHTML = renderCoffees(coffees);
-
 submitButton.addEventListener('click', updateCoffees);
-// lightButton.addEventListener('click', updateCoffees);
 
-var searchInput = document.getElementById("searchBox")
-// var searchButton = searchInput.value
-searchInput.addEventListener(onkeyup, updateCoffees)
+var searchCoffees = function(event) {
+    event.preventDefault();
+    var searchedCoffees = [];
+    var searchInput = document.getElementById("searchBox").value;
+    coffees.forEach(function(coffee) {
+        if (coffee.name.includes(searchInput) || coffee.roast.includes(searchInput)) {
+            searchedCoffees.push(coffee);
+        }
 
-// function autocomplete(input) {
-//     if(input == " ") {
-//         return [];
-//     }
-//     var reg = new RegExp(input)
-//     return coffees.filter(function (coffee) {
-//         if(coffee.match(reg)) {
-//             return coffee
-//         }
-//     });
-// }
-
-// function showResults (val){
-//     res = document.getElementById('result');
-//     res.innerHTML = '';
-//     let list = '';
-//     let coffees = autocomplete(val);
-//     for (let i = 0; i < ;coffees.length i++) {
-//         list += coffees[i];
-//     }
-//     res.innerHTML = list;
+    });
+    tbody.innerHTML = renderCoffees(searchedCoffees);
 }
+
+document.getElementById('searchBox').addEventListener('keyup',searchCoffees);
+
+
+
+var displayLRoast = function (event) {
+    let lightRoastCoffees = [];
+       coffees.forEach(function (coffee){
+           if(coffee.roast === 'Light'){
+               lightRoastCoffees.push(coffee);
+               tbody.innerHTML = renderCoffees(lightRoastCoffees);
+           }
+       })
+
+}
+document.getElementById('lightButton').addEventListener('click', displayLRoast);
+
+var displayMRoast = function (event) {
+    let mediumRoastCoffees = [];
+    coffees.forEach(function (coffee){
+        if(coffee.roast === 'Medium'){
+            mediumRoastCoffees.push(coffee);
+            tbody.innerHTML = renderCoffees(mediumRoastCoffees);
+        }
+    })
+
+}
+document.getElementById('mediumButton').addEventListener('click', displayMRoast);
+
+var displayDRoast = function (event) {
+    let darkRoastCoffees = [];
+    coffees.forEach(function (coffee){
+        if(coffee.roast === 'Dark'){
+            darkRoastCoffees.push(coffee);
+            tbody.innerHTML = renderCoffees(darkRoastCoffees);
+        }
+    })
+
+}
+document.getElementById('darkButton').addEventListener('click', displayDRoast);
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+// var displayMediumRoast = function (event) {
+//     document.getElementById("coffees").innerText = mediumRoastedCoffees;
+// }
+// document.getElementById('mediumButton').addEventListener('click', displayRoast);
+//
+// var displayDarkRoast = function (event) {
+//     document.getElementById("coffees").innerText = darkRoastedCoffees;
+// }
+// document.getElementById('darkButton').addEventListener('click', displayRoast);
+
+
+
+
+
+
+
+// This function kind of works, will work with first letter of input or completed input for name, doesn't work
+// for roast
+// var searchCoffees = function(event) {
+//     event.preventDefault();
+//     var searchedCoffees = [];
+//     var searchInput = document.getElementById("searchBox").value;
+//     coffees.forEach(function(coffee) {
+//         for (let i = 0; i < coffee.name.length; i++) {
+//             if (searchInput === substr.coffee.name[i]) {
+//                 searchedCoffees.push(coffee);
+//             }
+//         }
+//
+//     });
+//     tbody.innerHTML = renderCoffees(searchedCoffees);
+// }
+// document.getElementById('searchBox').addEventListener('keyup',searchCoffees);
+
+
+
+
+
+
 

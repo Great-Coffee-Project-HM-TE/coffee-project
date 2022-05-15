@@ -11,7 +11,7 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    for (var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -21,7 +21,7 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
+    coffees.forEach(function (coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
@@ -54,11 +54,11 @@ var roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 
-var searchCoffees = function(event) {
+var searchCoffees = function (event) {
     event.preventDefault();
     var searchedCoffees = [];
     var searchInput = document.getElementById("searchBox").value;
-    coffees.forEach(function(coffee) {
+    coffees.forEach(function (coffee) {
         if (coffee.name.toUpperCase().includes(searchInput.toUpperCase()) || coffee.roast.toUpperCase().includes(searchInput.toUpperCase())) {
             searchedCoffees.push(coffee);
         }
@@ -66,26 +66,25 @@ var searchCoffees = function(event) {
     tbody.innerHTML = renderCoffees(searchedCoffees);
 }
 
-document.getElementById('searchBox').addEventListener('keyup',searchCoffees);
-
+document.getElementById('searchBox').addEventListener('keyup', searchCoffees);
 
 
 var displayLRoast = function (event) {
     let lightRoastCoffees = [];
-       coffees.forEach(function (coffee){
-           if(coffee.roast === 'Light'){
-               lightRoastCoffees.push(coffee);
-               tbody.innerHTML = renderCoffees(lightRoastCoffees);
-           }
-       })
+    coffees.forEach(function (coffee) {
+        if (coffee.roast === 'Light') {
+            lightRoastCoffees.push(coffee);
+            tbody.innerHTML = renderCoffees(lightRoastCoffees);
+        }
+    })
 
 }
 document.getElementById('lightButton').addEventListener('click', displayLRoast);
 
 var displayMRoast = function (event) {
     let mediumRoastCoffees = [];
-    coffees.forEach(function (coffee){
-        if(coffee.roast === 'Medium'){
+    coffees.forEach(function (coffee) {
+        if (coffee.roast === 'Medium') {
             mediumRoastCoffees.push(coffee);
             tbody.innerHTML = renderCoffees(mediumRoastCoffees);
         }
@@ -96,8 +95,8 @@ document.getElementById('mediumButton').addEventListener('click', displayMRoast)
 
 var displayDRoast = function (event) {
     let darkRoastCoffees = [];
-    coffees.forEach(function (coffee){
-        if(coffee.roast === 'Dark'){
+    coffees.forEach(function (coffee) {
+        if (coffee.roast === 'Dark') {
             darkRoastCoffees.push(coffee);
             tbody.innerHTML = renderCoffees(darkRoastCoffees);
         }
@@ -106,12 +105,15 @@ var displayDRoast = function (event) {
 }
 document.getElementById('darkButton').addEventListener('click', displayDRoast);
 
+
+//displays all coffees
+
 var displayAllRoast = function (event) {
     tbody.innerHTML = renderCoffees(coffees);
 }
 document.getElementById('allButton').addEventListener('click', displayAllRoast);
 
-var addCustomersCoffee = function (event){
+var addCustomersCoffee = function (event) {
     event.preventDefault()
     let customerEnteredRoast = document.getElementById('customerRoast').value
     let customerEnteredName = document.getElementById('addYourBrew').value
@@ -132,8 +134,6 @@ document.getElementById('submitRoast').addEventListener('click', addCustomersCof
 // document.getElementById('submitRoast').addEventListener('click', addCustomersCoffee);
 
 
-
-
 //
 //
 // var displayMediumRoast = function (event) {
@@ -145,11 +145,6 @@ document.getElementById('submitRoast').addEventListener('click', addCustomersCof
 //     document.getElementById("coffees").innerText = darkRoastedCoffees;
 // }
 // document.getElementById('darkButton').addEventListener('click', displayRoast);//
-
-
-
-
-
 
 
 // This function kind of works, will work with first letter of input or completed input for name, doesn't work

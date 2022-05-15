@@ -1,17 +1,24 @@
 body{
-    background-image: ;
+
 }
-.header {
+.jumbotron{
     background-image: url("pexels-lukas-1419931(1).jpg");
-    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+
+.header {
     height: 80px;
+    padding: 0;
+    width: 100%;
 }
 
 #compName {
     font-family: 'Anton', sans-serif;
     font-size: 18px;
 }
-
 
 #coffees{
     display: flex;
@@ -31,8 +38,8 @@ h3  {
 }
 .coffee {
     display: flex;
-    width: 150px;
-    height: 200px;
+    width: 125px;
+    height: 175px;
     border: solid #675041 3px;
     background-image: url("Preview22 copy.jpg");
     background-size: 150%;
@@ -40,6 +47,7 @@ h3  {
     justify-content: space-between;
     align-items: center;
     background-position: center;
+    margin-bottom: 6px;
 }
 #selectButton{
     height: 10px;
@@ -74,6 +82,9 @@ h3  {
     font-family: 'Abel',serif;
 }
 
-#searchBox{
+#searchBox {
     height: 1em;
+}
+#addBrewBox{
+    text-align: center;
 }
